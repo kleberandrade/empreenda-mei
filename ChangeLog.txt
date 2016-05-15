@@ -1,0 +1,9 @@
+
+---------------------------MEI ChangeLog-----------------------------------
+
+15/05/2016:
+	- Adicionado sequencia inicial de telas
+	- Adicionado Splash Screen(Carregamento Async usando SceneManagement)
+	- Menu principal Adicionado
+	- Adicionado botões do menu principal(Apenas Jogar funcional no momento)
+	
