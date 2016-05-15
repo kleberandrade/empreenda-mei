@@ -9,11 +9,12 @@ public class ChangeScene : MonoBehaviour
 
     void Start()
     {
-        lvNum = 1;
+        lvNum = 1; //Placeholder number
     }
 
     void Update()
     {
+        // If its one of the first 2 Logos scene call SceneChangeInit to load next scene in the build settings
         if(SceneManager.GetActiveScene().buildIndex == 0 || SceneManager.GetActiveScene().buildIndex == 1)
             StartCoroutine(SceneChangeInit(SceneManager.GetActiveScene().buildIndex));
     }
@@ -24,26 +25,19 @@ public class ChangeScene : MonoBehaviour
         StartCoroutine("SceneChange");
     }
 
+    // Use to Add a scene to current one 
     public void AddScene(int sceneIndex)
     {
-        SceneManager.LoadScene(sceneIndex,LoadSceneMode.Additive);
-        if (sceneIndex == 2)
-        {
-            anim = GameObject.Find("PauseBG").GetComponent<Animator>();
-            anim.SetTimeUpdateMode(UnityEngine.Experimental.Director.DirectorUpdateMode.UnscaledGameTime);
-            Time.timeScale = 0;
-        }
+        SceneManager.LoadScene(sceneIndex,LoadSceneMode.Additive);        
     }
 
+    //Unload the scene you added. OBS: Don't use different scene index from what you loaded.
     public void UnloadAddScene(int sceneIndex)
     {
         SceneManager.UnloadScene(sceneIndex);        
-    }
+    }  
 
-    public void UnloadPauseAnim(int sceneIndex)
-    {
-        StartCoroutine(PauseExit(sceneIndex));
-    }
+
 
     IEnumerator SceneChange()
     {
@@ -60,6 +54,7 @@ public class ChangeScene : MonoBehaviour
         SceneManager.LoadScene(sceneIndex + 1);        
     }
 
+    /*//This part of code will be used after Exit Confirmation Popup have been done
     IEnumerator ExitGame()
     {
         yield return new WaitForSeconds(1);
@@ -67,14 +62,5 @@ public class ChangeScene : MonoBehaviour
         yield return new WaitForSeconds(fadeTime);
         Application.Quit();
                 
-    }
-
-    IEnumerator PauseExit(int indexNum)
-    {        
-        anim = GameObject.Find("PauseBG").GetComponent<Animator>();
-        anim.SetBool("IsExit", true);
-        yield return new WaitForSeconds(1);
-        Time.timeScale = 1;
-        SceneManager.UnloadScene(indexNum);
-    }    
+    } */
 }

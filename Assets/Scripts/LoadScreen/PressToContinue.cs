@@ -33,6 +33,5 @@ public class PressToContinue : MonoBehaviour
         yield return new WaitForSeconds(fadeTime);
         // When we got any get down and the text is enabled (when the event OnWaitingEventToActivateScene is fired)
         LoadScreen.Instance.ActivateScene();
-
     }
 }

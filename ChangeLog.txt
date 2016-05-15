@@ -6,4 +6,3 @@
 	- Adicionado Splash Screen(Carregamento Async usando SceneManagement)
 	- Menu principal Adicionado
 	- Adicionado botões do menu principal(Apenas Jogar funcional no momento)
-	

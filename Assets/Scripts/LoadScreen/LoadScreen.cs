@@ -31,7 +31,7 @@ public class LoadScreen : MonoBehaviour
         StopAllCoroutines();
         StartCoroutine(doLoadLevel(levelName, customLoadScene, manualSceneActivation));
     }
-    //
+    
     public void LoadLevel(string levelName, string customLoadScene)
     {
         LoadLevel(levelName, false, customLoadScene);
@@ -48,7 +48,7 @@ public class LoadScreen : MonoBehaviour
 
     public delegate void LoadEvent();
    
-    // Occurs when on scene finished the loading and start waiting to a call for ActivateScene() to continue.  
+    // Occurs when the scene finished loading and start waiting to a call for ActivateScene() to continue.  
     public event LoadEvent OnStartWaitingEventToActivateScene;
 
     IEnumerator doLoadLevel(string name, string customLoadScene, bool manualActivation)

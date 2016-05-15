@@ -8,6 +8,7 @@ public class LoadingBGChanger : MonoBehaviour
     public int imgToLoad;
     public GameObject thisGO;
 
+    //Changes the background of the Loading Scene, useful for Game Tips or Game Art
     void Start()
     {
         thisGO = gameObject;
